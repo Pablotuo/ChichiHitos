@@ -8,10 +8,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Lista de lugares con latitudes, longitudes, nombres, descripciones y la URL de las imágenes
 var lugares = [
-    { lat: 10.4168, lon: -83.7038, nombre: "Madrid", descripcion: "La capital de España.", imagen: "images/madrid.jpg" },
-    { lat: 11.9028, lon: -84.4964, nombre: "Roma", descripcion: "La ciudad eterna en Italia.", imagen: "images/roma.jpg" },
-    { lat: 10.8566, lon: -83.3522, nombre: "París", descripcion: "La ciudad de la luz en Francia.", imagen: "images/paris.jpg" },
-    { lat: 9.0522, lon: -84.2437, nombre: "Los Ángeles", descripcion: "La ciudad de las estrellas en USA.", imagen: "images/los-angeles.jpg" }
+    { lat: 10.4168, lon: -83.7038, nombre: "BM 1489", descripcion: "DESTRUIDO", imagen: "images/madrid.jpg" },
+    { lat: 11.9028, lon: -84.4964, nombre: "BM J89", descripcion: "SEPULTADO", imagen: "images/roma.jpg" },
+    { lat: 10.8566, lon: -83.3522, nombre: "SASA", descripcion: "BUEN ESTADO ", imagen: "images/paris.jpg" },
+    { lat: 9.0522, lon: -84.2437, nombre: "BM 67", descripcion: "INVESTIGAR", imagen: "images/los-angeles.jpg" }
 ];
 
 // Iterar sobre el arreglo y agregar un marcador para cada lugar
