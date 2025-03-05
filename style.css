@@ -3,6 +3,7 @@ body {
     text-align: center;
     padding: 2px;
     color: red;
+    background-color: #f0f0f0; /* Fondo gris claro */
 }
 
 #map {
