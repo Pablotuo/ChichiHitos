@@ -1,5 +1,5 @@
-// Crear el mapa centrado en una ubicación inicial (por ejemplo, Madrid)
-var map = L.map('map').setView([9.7489, -83.7534], 7); // Coordenadas de Madrid, zoom de nivel 3 para ver más lugares
+// Crear el mapa centrado en en Costa Rica
+var map = L.map('map').setView([9.7489, -83.7534], 7); // Para que el mapa abra en Costa Rica, con un zoom de 7
 
 // Agregar un mapa base (OpenStreetMap en este caso)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
