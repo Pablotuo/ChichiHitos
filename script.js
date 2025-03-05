@@ -1,5 +1,5 @@
 // Crear el mapa centrado en en Costa Rica
-var map = L.map('map').setView([9.7489, -83.7534], 7); // Para que el mapa abra en Costa Rica, con un zoom de 7
+var map = L.map('map').setView([9.7489, -83.7534], 8); // Para que el mapa abra en Costa Rica, con un zoom de 8
 
 // Agregar un mapa base (OpenStreetMap en este caso)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -9,8 +9,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Lista de lugares con latitudes, longitudes, nombres, descripciones y la URL de las imágenes
 var lugares = [
     { lat: 10.4168, lon: -83.7038, nombre: "BM 1489", descripcion: "DESTRUIDO", imagen: "images/madrid.jpg" },
-    { lat: 11.9028, lon: -84.4964, nombre: "BM J89", descripcion: "SEPULTADO", imagen: "images/roma.jpg" },
-    { lat: 10.8566, lon: -83.3522, nombre: "SASA", descripcion: "BUEN ESTADO ", imagen: "images/paris.jpg" },
+    { lat: 9.9028, lon: -84.4964, nombre: "BM J89", descripcion: "SEPULTADO", imagen: "images/roma.jpg" },
+    { lat: 9.8566, lon: -83.3522, nombre: "SASA", descripcion: "BUEN ESTADO ", imagen: "images/paris.jpg" },
     { lat: 9.0522, lon: -84.2437, nombre: "BM 67", descripcion: "INVESTIGAR", imagen: "images/los-angeles.jpg" }
 ];
 
