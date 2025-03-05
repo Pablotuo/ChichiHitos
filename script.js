@@ -1,5 +1,5 @@
 // Crear el mapa centrado en una ubicación inicial (por ejemplo, Madrid)
-var map = L.map('map').setView([40.4168, -3.7038], 3); // Coordenadas de Madrid, zoom de nivel 3 para ver más lugares
+var map = L.map('map').setView([9.7489, -83.7534], 7); // Coordenadas de Madrid, zoom de nivel 3 para ver más lugares
 
 // Agregar un mapa base (OpenStreetMap en este caso)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
