@@ -1,11 +1,12 @@
 body {
-    font-family: impact, sans-serif;
+    font-family: Impact, sans-serif;
     text-align: center;
     padding: 2px;
+    color: red;
 }
 
 #map {
     height: 500px;
-    width: 100%;
+    width: 50%;
     margin-top: 20px;
 }
