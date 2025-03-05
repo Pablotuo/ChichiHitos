@@ -12,6 +12,7 @@ var lugares = [
     { lat: 41.9028, lon: 12.4964, nombre: "Roma", descripcion: "La ciudad eterna en Italia.", imagen: "images/roma.jpg" },
     { lat: 48.8566, lon: 2.3522, nombre: "París", descripcion: "La ciudad de la luz en Francia.", imagen: "images/paris.jpg" },
     { lat: 34.0522, lon: -118.2437, nombre: "Los Ángeles", descripcion: "La ciudad de las estrellas en USA.", imagen: "images/los-angeles.jpg" }
+    { lat: 9.0522, lon: -84.2437, nombre: "Los Ángeles", descripcion: "La ciudad de las estrellas en USA.", imagen: "images/los-angeles.jpg" }
 ];
 
 // Iterar sobre el arreglo y agregar un marcador para cada lugar
