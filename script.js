@@ -1,10 +1,11 @@
 // Crear el mapa centrado en en Costa Rica
-var map = L.map('map').setView([9.7489, -83.7534], 8); // Para que el mapa abra en Costa Rica, con un zoom de 8
+var map = L.map('map').setView([9.7489, -83.7534], 8); // Crea un mapa con el id map. Para que el mapa abra en Costa Rica, con un zoom de 8
 
 // Agregar un mapa base (OpenStreetMap en este caso)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+}).addTo(map);  // Añade una capa de azulejos (tiles) de OpenStreetMap. Los azulejos son las pequeñas imágenes que componen el mapa.
+//Esta parte indica que la capa de OpenStreetMap se agregará al mapa que creamos anteriormente.
 
 // Lista de lugares con latitudes, longitudes, nombres, descripciones y la URL de las imágenes
 var lugares = [
