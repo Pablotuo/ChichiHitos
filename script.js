@@ -22,5 +22,5 @@ var lugares = [
 // Iterar sobre el arreglo y agregar un marcador para cada lugar
 lugares.forEach(function(lugar) {
     L.marker([lugar.lat, lugar.lon]).addTo(map)
-        .bindPopup("<b>" + lugar.nombre + "</b><br>" + lugar.descripcion + "<br><img src='" + lugar.imagen + "' alt='" + lugar.nombre + "' style='width:100px; height:auto;'>");
+        .bindPopup("<b>" + lugar.nombre + "</b><br>" + lugar.descripcion + "<br><img src='" + lugar.imagen + "' alt='" + lugar.nombre + "' style='width:350px; height:auto;'>");
 });
