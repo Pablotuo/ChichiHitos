@@ -22,7 +22,7 @@ var lugares = [
     "lon": -84.024251,
     "nombre": "57-LA",
     "descripcion": "Blanco",
-    "imagen": "https://github.com/Pablotuo/ChichiHitos/blob/main/imagenes/image%20(3).png?raw=true"
+    "imagen": "https://github.com/Pablotuo/ChichiHitos/blob/main/images/20220501_122303.jpg?raw=true"
   }
 ];
 
