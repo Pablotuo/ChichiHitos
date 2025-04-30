@@ -17,6 +17,13 @@ var lugares = [
     "descripcion": "Blanco",
     "imagen": "https://github.com/Pablotuo/ChichiHitos/blob/main/imagenes/image%20(3).png?raw=true"
   }
+    {
+    "lat": 10.992554,
+    "lon": -84.024251,
+    "nombre": "57-LA",
+    "descripcion": "Blanco",
+    "imagen": "https://github.com/Pablotuo/ChichiHitos/blob/main/imagenes/image%20(3).png?raw=true"
+  }
 ];
 
 // Iterar sobre el arreglo y agregar un marcador para cada lugar
