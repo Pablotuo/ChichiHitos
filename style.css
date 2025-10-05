@@ -16,16 +16,16 @@ body {
     color: darkgreen; /* verde oscuro */
     text-align: center;
     font-family: 'impact', serif;
-    font-weight: bold;
+    font-weight: normal;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .titulo-inferior {
-    color: red; /* verde oscuro */
+    color: black; /* verde oscuro */
     text-align: center;
     font-family: 'Georgia', serif;
-    font-weight: bold;
+    font-weight: normal;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
