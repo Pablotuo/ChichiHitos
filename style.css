@@ -11,3 +11,21 @@ body {
     width: 100%;
     margin-top: 20px;
 }
+
+.titulo-superior {
+    color: darkgreen; /* verde oscuro */
+    text-align: center;
+    font-family: 'impact', serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.titulo-inferior {
+    color: red; /* verde oscuro */
+    text-align: center;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
