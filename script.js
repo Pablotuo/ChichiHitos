@@ -1,20 +1,17 @@
 // =============================
 //  MAPAS BASE
 // =============================
-
-// Capa base 1: OpenStreetMap
 const calle = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 });
 
-// Capa base 2: Satélite ESRI
 const satelite = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
     { attribution: '© ESRI World Imagery' }
 );
 
 // =============================
-//  CREAR MAPA (COSTA RICA)
+//  CREAR MAPA
 // =============================
 const map = L.map('map', {
     center: [9.7489, -83.7534],
@@ -22,9 +19,7 @@ const map = L.map('map', {
     layers: [calle]
 });
 
-// =============================
-//  CONTROL DE CAPAS
-// =============================
+// Control capas
 const mapasBase = {
     "Calles - OSM": calle,
     "Satélite - ESRI": satelite
@@ -53,72 +48,75 @@ const lugares = [
 ];
 
 // =============================
+//  MOSTRAR DATOS EN PANEL
+// =============================
+function mostrarEnPanel(html) {
+    document.getElementById("contenidoPanel").innerHTML = html;
+}
+
+// =============================
 //  AGREGAR MARCADORES
 // =============================
-lugares.forEach(lugar => {
-    L.marker([lugar.lat, lugar.lon]).addTo(map)
-      .bindPopup(`
-        <b>${lugar.nombre}</b><br>
-        ${lugar.descripcion}<br>
-        <img src="${lugar.imagen}" alt="${lugar.nombre}" style="width:350px; height:auto;">
-      `);
+lugares.forEach(l => {
+    L.marker([l.lat, l.lon]).addTo(map)
+      .on("click", function () {
+         mostrarEnPanel(`
+            <h3>${l.nombre}</h3>
+            <p>${l.descripcion}</p>
+            <img src="${l.imagen}">
+         `);
+      });
 });
 
 
-
 // ======================================================
-//  🔵 INTEGRACIÓN DEL WFS DEL SNIT
+//  🔵 WFS DEL SNIT FUNCIONAL
 // ======================================================
 
-// Variable global para almacenar la capa WFS
 let capaWFS = null;
 let capaVisible = false;
 
-// URL WFS del SNIT (EJEMPLO: centro poblado IGN)
-// 👉 Cambia "IGN_5:centro_poblado" por la capa que necesites
+// Capa WFS que SÍ devuelve GeoJSON correctamente
 const urlWFS = "https://geos.snitcr.go.cr/be/IGN_5/wfs?" +
-    "service=WFS&version=1.0.0&request=GetFeature&typeName=IGN_5:centro_poblado&outputFormat=application/json";
+    "service=WFS&version=1.0.0&request=GetFeature&typeName=IGN_5:distrito&outputFormat=application/json&SRSName=EPSG:4326";
 
-
-// Evento del botón
-document.getElementById("btnWFS").addEventListener("click", function () {
+document.getElementById("btnWFS").addEventListener("click", function() {
 
     if (!capaVisible) {
 
-        // Si no existe la capa aún → descargarla
         if (!capaWFS) {
             fetch(urlWFS)
-                .then(resp => resp.json())
+                .then(response => response.json())
                 .then(data => {
 
                     capaWFS = L.geoJSON(data, {
                         style: {
                             color: "red",
-                            weight: 2
+                            weight: 1
                         },
                         onEachFeature: function (feature, layer) {
-                            // Popup básico con atributos de la capa WFS
-                            const props = feature.properties;
-                            let txtPopup = "<b>Elemento WFS</b><br>";
 
-                            // Mostrar todos los atributos que existan
-                            for (const key in props) {
-                                txtPopup += `<b>${key}:</b> ${props[key]}<br>`;
-                            }
+                            layer.on("click", function () {
 
-                            layer.bindPopup(txtPopup);
+                                let html = "<h3>Distrito</h3>";
+
+                                for (let k in feature.properties) {
+                                    html += `<b>${k}:</b> ${feature.properties[k]}<br>`;
+                                }
+
+                                mostrarEnPanel(html);
+                            });
                         }
                     }).addTo(map);
+
                 });
         } else {
-            // Si ya existe → solo mostrarla
             capaWFS.addTo(map);
         }
 
         capaVisible = true;
 
     } else {
-        // Ocultar capa
         map.removeLayer(capaWFS);
         capaVisible = false;
     }
